@@ -5,6 +5,12 @@ import warnings
 from distutils.version import LooseVersion
 import project_tests as tests
 
+regularizer_l2 = 1e-3
+std_dev = 0.01
+Keep_Prob = 0.75
+epochs = 20
+batch_size = 8
+
 
 # Check TensorFlow Version
 assert LooseVersion(tf.__version__) >= LooseVersion('1.0'), 'Please use TensorFlow version 1.0 or newer.  You are using {}'.format(tf.__version__)
@@ -57,10 +63,6 @@ def layers(vgg_layer3_out, vgg_layer4_out, vgg_layer7_out, num_classes):
     :return: The Tensor for the last layer of output
     """
     # TODO: Implement function
-
-    regularizer_l2 = 1e-3
-    std_dev = 0.01
-
     conv_1x1_7 = tf.layers.conv2d(vgg_layer7_out, 
 				                  num_classes, 
 				                  1, 
@@ -169,7 +171,7 @@ def train_nn(sess, epochs, batch_size, get_batches_fn, train_op, cross_entropy_l
             _, loss = sess.run([train_op,cross_entropy_loss],
 			               	   feed_dict={input_image: image,
                                           correct_label: label,
-                                          keep_prob: 0.5,
+                                          keep_prob: Keep_Prob,
                                           learning_rate: 0.00001
 				   	                     })
             print("epoch: {}, batch: {}, loss: {}".format(epoch+1, batch_idx, loss))
@@ -211,12 +213,7 @@ def run():
         
         input_image, keep_prob, layer3_out, layer4_out, layer7_out = load_vgg(sess, vgg_path)
         layer_output = layers(layer3_out, layer4_out, layer7_out, num_classes)
-        logits, train_op, cross_entropy_loss = optimize(layer_output, correct_label, learning_rate, num_classes)
-
-
-        # TODO: Train NN using the train_nn function
-        epochs = 50
-        batch_size = 5   
+        logits, train_op, cross_entropy_loss = optimize(layer_output, correct_label, learning_rate, num_classes)  
 
         saver = tf.train.Saver()
         
