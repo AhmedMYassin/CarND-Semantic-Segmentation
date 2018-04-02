@@ -7,9 +7,9 @@ import project_tests as tests
 
 regularizer_l2 = 1e-3
 std_dev = 0.01
-Keep_Prob = 0.75
-epochs = 20
-batch_size = 8
+Keep_Prob = 0.50
+epochs = 50
+batch_size = 5
 
 
 # Check TensorFlow Version
