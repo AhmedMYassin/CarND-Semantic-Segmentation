@@ -1,6 +1,54 @@
+[image0]: ./Samples/loss.png
+[image1]: ./Samples/1.png
+[image2]: ./Samples/2.png
+[image3]: ./Samples/3.png
+[image4]: ./Samples/4.png
+[image5]: ./Samples/5.png
+[image6]: ./Samples/6.png
+[image7]: ./Samples/7.png
+[image8]: ./Samples/8.png
+[image9]: ./Samples/9.png
+[image10]: ./Samples/10.png
+[video1]: ./videos/1.mp4
+[video1]: ./videos/2.mp4
+[video1]: ./videos/3.mp4
+
 # Semantic Segmentation
 ### Introduction
-In this project, you'll label the pixels of a road in images using a Fully Convolutional Network (FCN).
+This project aims to create a Fully Convolutional Network (FCN) to label the pixels of a road in images using `kitti Road dataset` and `VGG16` pre-trained model.
+
+### Model Training
+
+The model is trained based on the following hyperparameter:
+
+| Parameter        | Value   | 
+|:-------------:|:-------------:| 
+| Learning rate      | 0.00001        | 
+| Batch Size      | 5      |
+| Epochs      | 50      |
+| Regularization factor     | 0.001        |
+| Keep Probability     | 0.5        |
+
+
+During the training, this is the loss among the `50` epochs:
+
+<img src="./Samples/loss.png" height="350" width="600"/>
+
+### Model Results
+
+<p>
+  <img src="./Samples/1.png" height="120" width="280"/>
+  <img src="./Samples/2.png" height="120" width="280"/>
+  <img src="./Samples/3.png" height="120" width="280"/>
+  <img src="./Samples/4.png" height="120" width="280"/>
+  <img src="./Samples/5.png" height="120" width="280"/>
+  <img src="./Samples/6.png" height="120" width="280"/>
+  <img src="./Samples/7.png" height="120" width="280"/>
+  <img src="./Samples/8.png" height="120" width="280"/>
+  <img src="./Samples/9.png" height="120" width="280"/>
+</p>
+
+Check also these 3 videos of different roads after applying the FCN model [Here](./videos/1.mp4), [Here](./videos/2.mp4), [Here](./videos/3.mp4) 
 
 ### Setup
 ##### Frameworks and Packages
