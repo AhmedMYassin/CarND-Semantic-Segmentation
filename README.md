@@ -1,18 +1,3 @@
-[image0]: ./Samples/loss.png
-[image1]: ./Samples/1.png
-[image2]: ./Samples/2.png
-[image3]: ./Samples/3.png
-[image4]: ./Samples/4.png
-[image5]: ./Samples/5.png
-[image6]: ./Samples/6.png
-[image7]: ./Samples/7.png
-[image8]: ./Samples/8.png
-[image9]: ./Samples/9.png
-[image10]: ./Samples/10.png
-[video1]: ./videos/1.mp4
-[video1]: ./videos/2.mp4
-[video1]: ./videos/3.mp4
-
 # Semantic Segmentation
 ### Introduction
 This project aims to create a Fully Convolutional Network (FCN) to label the pixels of a road in images using `kitti Road dataset` and `VGG16` pre-trained model.
@@ -50,6 +35,7 @@ During the training, this is the loss among the `50` epochs:
 
 Check also these 3 videos of different roads after applying the FCN model [Here](./videos/1.mp4), [Here](./videos/2.mp4), [Here](./videos/3.mp4) 
 
+---
 ### Setup
 ##### Frameworks and Packages
 Make sure you have the following is installed:
